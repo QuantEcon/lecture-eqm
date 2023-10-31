@@ -1,2 +1,3 @@
-# reorg.equilibrium-models
+# lecture-eqm
+
 Equilibrium Models
