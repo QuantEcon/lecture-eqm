@@ -1,0 +1,32 @@
+format: jb-book
+root: intro
+parts:
+- caption: Multiple Agent Models
+  numbered: true
+  chapters:
+  - file: schelling
+  - file: uncertainty_traps
+  - file: aiyagari
+  - file: arellano
+  - file: matsuyama
+  - file: coase
+- caption: Auctions & Other Applications
+  numbered: true
+  chapters:
+  - file: two_auctions
+  - file: house_auction
+- caption: Rational Expectation Models
+  numbered: true
+  chapters:
+  - file: cass_koopmans_1
+  - file: cass_koopmans_2
+  - file: rational_expectations
+  - file: re_with_feedback
+  - file: markov_perf
+  - file: knowing_forecasts_of_others
+- caption: Other
+  numbered: true
+  chapters:
+  - file: troubleshooting
+  - file: zreferences
+  - file: status
