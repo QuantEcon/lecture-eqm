@@ -1,0 +1,681 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>16. References &#8212; Equilibrium Models</title>
+    <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    
+        <script>
+            MathJax = {
+            loader: {load: ['[tex]/boldsymbol', '[tex]/textmacros']},
+            tex: {
+                packages: {'[+]': ['boldsymbol', 'textmacros']},
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                processEscapes: true,
+                macros: {
+                    "argmax" : "arg\\,max",
+                    "argmin" : "arg\\,min",
+                    "col"    : "col",
+                    "Span"   :  "span",
+                    "epsilon": "\\varepsilon",
+                    "EE": "\\mathbb{E}",
+                    "PP": "\\mathbb{P}",
+                    "RR": "\\mathbb{R}",
+                    "NN": "\\mathbb{N}",
+                    "ZZ": "\\mathbb{Z}",
+                    "aA": "\\mathcal{A}",
+                    "bB": "\\mathcal{B}",
+                    "cC": "\\mathcal{C}",
+                    "dD": "\\mathcal{D}",
+                    "eE": "\\mathcal{E}",
+                    "fF": "\\mathcal{F}",
+                    "gG": "\\mathcal{G}",
+                    "hH": "\\mathcal{H}",
+                }
+            },
+            svg: {
+                fontCache: 'global',
+                scale: 0.92,
+                displayAlign: "center",
+            },
+            };
+        </script>
+    
+    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/quantecon-book-theme.css?digest=fb55226d87c9bac2266479caf30be1337b66f140" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/scripts/quantecon-book-theme.js?digest=eed9c059a3ee152aae2353ec732f0a6d12e6aa07"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'zreferences';</script>
+    <link rel="canonical" href="https://python.quantecon.org/zreferences.html" />
+    <link rel="shortcut icon" href="_static/lectures-favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="17. Execution Statistics" href="status.html" />
+    <link rel="prev" title="15. Troubleshooting" href="troubleshooting.html" />
+
+<!-- Normal Meta Tags -->
+<meta name="author" context="Thomas J. Sargent and John Stachurski" />
+<meta name="keywords" content="Python, QuantEcon, Quantitative Economics, Economics, Sloan, Alfred P. Sloan Foundation, Tom J. Sargent, John Stachurski" />
+<meta name="description" content=This website presents a set of lectures on equilibrium economic models. />
+
+<!-- Twitter tags -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@quantecon" />
+<meta name="twitter:title" content="References"/>
+<meta name="twitter:description" content="This website presents a set of lectures on equilibrium economic models.">
+<meta name="twitter:creator" content="@quantecon">
+<meta name="twitter:image" content="https://assets.quantecon.org/img/qe-twitter-logo.png">
+
+<!-- Opengraph tags -->
+<meta property="og:title" content="References" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://python.quantecon.org/zreferences.html" />
+<meta property="og:image" content="https://assets.quantecon.org/img/qe-og-logo.png" />
+<meta property="og:description" content="This website presents a set of lectures on equilibrium economic models." />
+<meta property="og:site_name" content="Equilibrium Models" />
+<meta name="theme-color" content="#ffffff" />
+
+  </head>
+<body>
+
+
+    <span id="top"></span>
+
+    <div class="qe-wrapper">
+
+        <div class="qe-main">
+
+            <div class="qe-page" id=zreferences>
+
+                <div class="qe-page__toc">
+
+                    <div class="inner">
+
+                        
+
+
+                        <nav id="bd-toc-nav" class="qe-page__toc-nav">
+                            
+                            <p class="logo">
+                                
+                                    
+                                    <a href=https://quantecon.org><img src="_static/qe-logo-large.png" class="logo logo-img" alt="logo"></a>
+                                    
+                                    
+                                
+                            </p>
+
+                            <p class="powered">Powered by <a href="https://jupyterbook.org/">Jupyter Book</a></p>
+
+                        </nav>
+
+                        <div class="qe-page__toc-footer">
+                            
+                            
+                            <p><a href="#top"><strong>Back to top</strong></a></p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="qe-page__header">
+
+                    <div class="qe-page__header-copy">
+
+                        <p class="qe-page__header-heading"><a href="intro.html">Equilibrium Models</a></p>
+
+                        <p class="qe-page__header-subheading">References</p>
+
+                    </div>
+                    <!-- length 2, since its a string and empty dict has length 2 - {} -->
+                        <p class="qe-page__header-authors" font-size="18">
+                            
+                                
+                                    <a href="http://www.tomsargent.com/" target="_blank"><span>Thomas J. Sargent</span></a>
+                                
+                            
+                                
+                                    and <a href="https://johnstachurski.net/" target="_blank"><span>John Stachurski</span></a>
+                                
+                            
+                        </p>
+
+
+                </div> <!-- .page__header -->
+
+
+
+                
+                <main class="qe-page__content" role="main">
+                    
+                    <div>
+                        
+  <section class="tex2jax_ignore mathjax_ignore" id="references">
+<span id="id1"></span><h1><span class="section-number">16. </span>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h1>
+<div class="docutils container" id="id2">
+<dl class="citation">
+<dt class="label" id="id128"><span class="brackets">Aiy94</span></dt>
+<dd><p>S Rao Aiyagari. Uninsured Idiosyncratic Risk and Aggregate Saving. <em>The Quarterly Journal of Economics</em>, 109(3):659–684, 1994.</p>
+</dd>
+<dt class="label" id="id28"><span class="brackets">AMS02</span></dt>
+<dd><p>Franklin Allen, Stephen Morris, and Hyun Song Shin. Beauty contests, bubbles, and iterated expectations in asset markets. <em>mimeo</em>, 2002.</p>
+</dd>
+<dt class="label" id="id135"><span class="brackets">AHMS96</span></dt>
+<dd><p>Evan Anderson, Lars Peter Hansen, Ellen R. McGrattan, and Thomas J. Sargent. Mechanics of forming and estimating dynamic linear economies. In Hans M. Amman, David A. Kendrick, and John Rust, editors, <em>Handbook of computational economics</em>, 171–252. Elsevier Science, North-Holland, 1996.</p>
+</dd>
+<dt class="label" id="id126"><span class="brackets">Are08</span></dt>
+<dd><p>Cristina Arellano. Default risk and income fluctuations in emerging economies. <em>The American Economic Review</em>, pages 690–712, 2008.</p>
+</dd>
+<dt class="label" id="id121"><span class="brackets">BBZ15</span></dt>
+<dd><p>Jess Benhabib, Alberto Bisin, and Shenghao Zhu. The wealth distribution in bewley economies with capital income risk. <em>Journal of Economic Theory</em>, 159:489–515, 2015.</p>
+</dd>
+<dt class="label" id="id137"><span class="brackets">BS79</span></dt>
+<dd><p>L M Benveniste and J A Scheinkman. On the Differentiability of the Value Function in Dynamic Models of Economics. <em>Econometrica</em>, 47(3):727–732, 1979.</p>
+</dd>
+<dt class="label" id="id164"><span class="brackets">Bew77</span></dt>
+<dd><p>Truman Bewley. The permanent income hypothesis: a theoretical formulation. <em>Journal of Economic Theory</em>, 16(2):252–292, 1977.</p>
+</dd>
+<dt class="label" id="id238"><span class="brackets">BK80</span></dt>
+<dd><p>Olivier Jean Blanchard and Charles M Kahn. The Solution of Linear Difference Models under Rational Expectations. <em>Econometrica</em>, 48(5):1305–1311, July 1980.</p>
+</dd>
+<dt class="label" id="id78"><span class="brackets">Cag56</span></dt>
+<dd><p>Philip Cagan. The monetary dynamics of hyperinflation. In Milton Friedman, editor, <em>Studies in the Quantity Theory of Money</em>, pages 25–117. University of Chicago Press, Chicago, 1956.</p>
+</dd>
+<dt class="label" id="id77"><span class="brackets">Cas65</span></dt>
+<dd><p>David Cass. Optimum growth in an aggregative model of capital accumulation. <em>Review of Economic Studies</em>, 32(3):233–240, 1965.</p>
+</dd>
+<dt class="label" id="id261"><span class="brackets">Cla71</span></dt>
+<dd><p>E. Clarke. Multipart pricing of public goods. <em>Public Choice</em>, 8:19–33, 1971.</p>
+</dd>
+<dt class="label" id="id232"><span class="brackets">Coa37</span></dt>
+<dd><p>Ronald Harry Coase. The nature of the firm. <em>economica</em>, 4(16):386–405, 1937.</p>
+</dd>
+<dt class="label" id="id88"><span class="brackets">DJ92</span></dt>
+<dd><p>Raymond J Deneckere and Kenneth L Judd. Cyclical and chaotic behavior in a dynamic equilibrium model, with implications for fiscal policy. <em>Cycles and chaos in economic equilibrium</em>, pages 308–329, 1992.</p>
+</dd>
+<dt class="label" id="id226"><span class="brackets">DS10</span></dt>
+<dd><p>Ulrich Doraszelski and Mark Satterthwaite. Computable markov-perfect industry dynamics. <em>The RAND Journal of Economics</em>, 41(2):215–243, 2010.</p>
+</dd>
+<dt class="label" id="id224"><span class="brackets">EP95</span></dt>
+<dd><p>Richard Ericson and Ariel Pakes. Markov-perfect industry dynamics: a framework for empirical work. <em>The Review of Economic Studies</em>, 62(1):53–82, 1995.</p>
+</dd>
+<dt class="label" id="id150"><span class="brackets">EH01</span></dt>
+<dd><p>G W Evans and S Honkapohja. <em>Learning and Expectations in Macroeconomics</em>. Frontiers of Economic Research. Princeton University Press, 2001.</p>
+</dd>
+<dt class="label" id="id124"><span class="brackets">FSTD15</span></dt>
+<dd><p>Pablo Fajgelbaum, Edouard Schaal, and Mathieu Taschereau-Dumouchel. Uncertainty traps. Technical Report, National Bureau of Economic Research, 2015.</p>
+</dd>
+<dt class="label" id="id260"><span class="brackets">Gro73</span></dt>
+<dd><p>T. Groves. Incentives in teams. <em>Econometrica</em>, 41:617–631, 1973.</p>
+</dd>
+<dt class="label" id="id120"><span class="brackets">HL96</span></dt>
+<dd><p>John Heaton and Deborah J Lucas. Evaluating the effects of incomplete markets on risk sharing and asset pricing. <em>Journal of Political Economy</em>, pages 443–487, 1996.</p>
+</dd>
+<dt class="label" id="id90"><span class="brackets">HK85</span></dt>
+<dd><p>Elhanan Helpman and Paul Krugman. <em>Market structure and international trade</em>. MIT Press Cambridge, 1985.</p>
+</dd>
+<dt class="label" id="id167"><span class="brackets">Jud90</span></dt>
+<dd><p>K L Judd. Cournot versus bertrand: a dynamic resolution. Technical Report, Hoover Institution, Stanford University, 1990.</p>
+</dd>
+<dt class="label" id="id89"><span class="brackets">Jud85</span></dt>
+<dd><p>Kenneth L Judd. On the performance of patents. <em>Econometrica</em>, pages 567–585, 1985.</p>
+</dd>
+<dt class="label" id="id24"><span class="brackets">Kas00</span></dt>
+<dd><p>Kenneth Kasa. Forecasting the forecasts of others in the frequency domain. <em>Review of Economic Dynamics</em>, 3:726–756, 2000.</p>
+</dd>
+<dt class="label" id="id231"><span class="brackets">KNS18</span></dt>
+<dd><p>Tomoo Kikuchi, Kazuo Nishimura, and John Stachurski. Span of control, transaction costs, and the structure of production chains. <em>Theoretical Economics</em>, 13(2):729–760, 2018.</p>
+</dd>
+<dt class="label" id="id76"><span class="brackets">Koo65</span></dt>
+<dd><p>Tjalling C. Koopmans. On the concept of optimal economic growth. In Tjalling C. Koopmans, editor, <em>The Economic Approach to Development Planning</em>, pages 225–287. Chicago, 1965.</p>
+</dd>
+<dt class="label" id="id227"><span class="brackets">LM80</span></dt>
+<dd><p>David Levhari and Leonard J Mirman. The great fish war: an example using a dynamic cournot-nash solution. <em>The Bell Journal of Economics</em>, pages 322–334, 1980.</p>
+</dd>
+<dt class="label" id="id173"><span class="brackets">LS18</span></dt>
+<dd><p>L Ljungqvist and T J Sargent. <em>Recursive Macroeconomic Theory</em>. MIT Press, 4 edition, 2018.</p>
+</dd>
+<dt class="label" id="id175"><span class="brackets">LP71</span></dt>
+<dd><p>Robert E Lucas, Jr. and Edward C Prescott. Investment under uncertainty. <em>Econometrica: Journal of the Econometric Society</em>, pages 659–681, 1971.</p>
+</dd>
+<dt class="label" id="id178"><span class="brackets">MS89</span></dt>
+<dd><p>Albert Marcet and Thomas J Sargent. Convergence of Least-Squares Learning in Environments with Hidden State Variables and Private Information. <em>Journal of Political Economy</em>, 97(6):1306–1322, 1989.</p>
+</dd>
+<dt class="label" id="id180"><span class="brackets">MCWG95</span></dt>
+<dd><p>A Mas-Colell, M D Whinston, and J R Green. <em>Microeconomic Theory</em>. Volume 1. Oxford University Press, 1995.</p>
+</dd>
+<dt class="label" id="id110"><span class="brackets">Mut60</span></dt>
+<dd><p>John F Muth. Optimal properties of exponentially weighted forecasts. <em>Journal of the american statistical association</em>, 55(290):299–306, 1960.</p>
+</dd>
+<dt class="label" id="id23"><span class="brackets">PCL86</span></dt>
+<dd><p>Joseph Pearlman, David Currie, and Paul Levine. Rational Expectations Models with Private Information. <em>Economic Modelling</em>, 3(2):90–105, 1986.</p>
+</dd>
+<dt class="label" id="id22"><span class="brackets">PS05</span></dt>
+<dd><p>Joseph G. Pearlman and Thomas J. Sargent. Knowing the Forecasts of Others. <em>Review of Economic Dynamics</em>, 8(2):480–497, April 2005. URL: <a class="reference external" href="https://ideas.repec.org/a/red/issued/v8y2005i2p480-497.html">https://ideas.repec.org/a/red/issued/v8y2005i2p480-497.html</a>, <a class="reference external" href="https://doi.org/10.1016/j.red.2004.10.011">doi:10.1016/j.red.2004.10.011</a>.</p>
+</dd>
+<dt class="label" id="id21"><span class="brackets">REL75</span></dt>
+<dd><p>Jr. Robert E. Lucas. An equilibrium model of the business cycle. <em>Journal of Political Economy</em>, 83:1113–1144, 1975.</p>
+</dd>
+<dt class="label" id="id225"><span class="brackets">Rya12</span></dt>
+<dd><p>Stephen P Ryan. The costs of environmental regulation in a concentrated industry. <em>Econometrica</em>, 80(3):1019–1061, 2012.</p>
+</dd>
+<dt class="label" id="id79"><span class="brackets">Sar77</span></dt>
+<dd><p>Thomas J Sargent. The Demand for Money During Hyperinflations under Rational Expectations: I. <em>International Economic Review</em>, 18(1):59–82, February 1977.</p>
+</dd>
+<dt class="label" id="id197"><span class="brackets">Sar87</span></dt>
+<dd><p>Thomas J Sargent. <em>Macroeconomic Theory</em>. Academic Press, New York, 2nd edition, 1987.</p>
+</dd>
+<dt class="label" id="id26"><span class="brackets">Sar91</span></dt>
+<dd><p>Thomas J. Sargent. Equilibrium with signal extraction from endogenous variables. <em>Journal of Economic Dynamics and Control</em>, 15:245–273, 1991.</p>
+</dd>
+<dt class="label" id="id199"><span class="brackets">Sch69</span></dt>
+<dd><p>Thomas C Schelling. Models of Segregation. <em>American Economic Review</em>, 59(2):488–493, 1969.</p>
+</dd>
+<dt class="label" id="id27"><span class="brackets">Sin87</span></dt>
+<dd><p>Kenneth J. Singleton. Asset prices in a time-series model with disparately informed competitive traders. In William A. Barnett and Kenneth J. Singleton, editors, <em>New Apprroaches to Monetary Economics</em>. Cambridge University Press, 1987.</p>
+</dd>
+<dt class="label" id="id25"><span class="brackets">Tow83</span></dt>
+<dd><p>Robert M. Townsend. Forecasting the forecasts of others. <em>Journal of Political Economy</em>, 91:546–588, 1983.</p>
+</dd>
+<dt class="label" id="id229"><span class="brackets">VL11</span></dt>
+<dd><p>Ngo Van Long. Dynamic games in the economics of natural resources: a survey. <em>Dynamic Games and Applications</em>, 1(1):115–148, 2011.</p>
+</dd>
+<dt class="label" id="id262"><span class="brackets">Vic61</span></dt>
+<dd><p>W. Vickrey. Counterspeculation, auctions, and competitive sealed tenders. <em>Journal of Finance</em>, 16:8–37, 1961.</p>
+</dd>
+<dt class="label" id="id239"><span class="brackets">Whi83</span></dt>
+<dd><p>Charles Whiteman. <em>Linear Rational Expectations Models: A User's Guide</em>. University of Minnesota Press, Minneapolis, Minnesota, 1983.</p>
+</dd>
+<dt class="label" id="id125"><span class="brackets">YS05</span></dt>
+<dd><p>G Alastair Young and Richard L Smith. <em>Essentials of statistical inference</em>. Cambridge University Press, 2005.</p>
+</dd>
+</dl>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                    </div>
+                    
+                </main> <!-- .page__content -->
+                
+
+
+                <footer class="qe-page__footer">
+
+                    <p><a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png"></a></p>
+
+                    <p>Creative Commons License &ndash; This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International.</p>
+
+                </footer> <!-- .page__footer -->
+
+            </div> <!-- .page -->
+
+            
+
+            
+            <div class="qe-sidebar bd-sidebar inactive" id="site-navigation">
+
+                <div class="qe-sidebar__header">
+
+
+                    Contents
+
+                </div>
+
+                <nav class="qe-sidebar__nav" id="qe-sidebar-nav" aria-label="Main navigation">
+                    <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Multiple Agent Models
+ </span>
+</p>
+<ul class="nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="schelling.html">
+   1. Schelling’s Segregation Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="uncertainty_traps.html">
+   2. Uncertainty Traps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="aiyagari.html">
+   3. The Aiyagari Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="arellano.html">
+   4. Default Risk and Income Fluctuations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matsuyama.html">
+   5. Globalization and Cycles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coase.html">
+   6. Coase’s Theory of the Firm
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Auctions &amp; Other Applications
+ </span>
+</p>
+<ul class="nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="two_auctions.html">
+   7. First-Price and Second-Price Auctions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="house_auction.html">
+   8. Multiple Good Allocation Mechanisms
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Rational Expectation Models
+ </span>
+</p>
+<ul class="nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="cass_koopmans_1.html">
+   9. Cass-Koopmans Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cass_koopmans_2.html">
+   10. Cass-Koopmans Competitive Equilibrium
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="rational_expectations.html">
+   11. Rational Expectations Equilibrium
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="re_with_feedback.html">
+   12. Stability in Linear Rational Expectations Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="markov_perf.html">
+   13. Markov Perfect Equilibrium
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="knowing_forecasts_of_others.html">
+   14. Knowing the Forecasts of Others
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Other
+ </span>
+</p>
+<ul class="current nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="troubleshooting.html">
+   15. Troubleshooting
+  </a>
+ </li>
+ <li class="toctree-l1 current active active">
+  <a class="current reference internal" href="#">
+   16. References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="status.html">
+   17. Execution Statistics
+  </a>
+ </li>
+</ul>
+
+                </nav>
+
+                <div class="qe-sidebar__footer">
+
+                </div>
+
+            </div> <!-- .sidebar -->
+            
+        </div> <!-- .main -->
+
+        <div class="qe-toolbar">
+
+            <div class="qe-toolbar__inner">
+
+                <ul class="qe-toolbar__main">
+                    <li data-tippy-content="Table of Contents" class="btn__sidebar"><i data-feather="menu"></i></li>
+                    <li data-tippy-content="Home"><a href="intro.html"><i data-feather="home"></i></a></li>
+                    <li class="btn__qelogo"><a href="https://quantecon.org" title=""><span class="show-for-sr">QuantEcon</span></a></li>
+                </ul>
+
+                <ul class="qe-toolbar__links">
+                    <li class="btn__search">
+                        <form action="search.html" method="get">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off" accesskey="k">
+                            <i data-feather="search" id="search-icon"></i>
+                        </form>
+                    </li>
+                    <li data-tippy-content="Fullscreen" class="btn__fullscreen"><i data-feather="maximize"></i></li>
+                    <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
+                    <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
+                    <li data-tippy-content="Change contrast" class="btn__contrast"><i data-feather="sunset"></i></li>
+                    <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
+                        <li data-tippy-content="Download PDF" onClick="window.print()"><i data-feather="file"></i></li>
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-python.myst/zreferences.md" download><i data-feather="github"></i></a></li>
+                </ul>
+
+            </div>
+
+        </div> <!-- .toolbar -->
+        <div id="downloadPDFModal" style="display: none;">
+            <ul class="pdf-options" style="display: block;">
+                <li class="download-pdf-book" onClick="window.print()">
+                    <p>Lecture (PDF)</p>
+                </li>
+                <li class="download-pdf-file">
+                    <a href="" download><p>Book (PDF)</p></a>
+                </li>
+            </ul>
+        </div>
+        <div id="settingsModal" style="display: none;">
+            <p class="modal-title"> Notebook Launcher </p>
+            <div class="modal-desc">
+            <p>
+                Choose public or private cloud service for "Launch" button.
+            </p>
+            </div>
+            <p class="modal-subtitle">Select a server</p>
+            <ul class="modal-servers">
+            <li class="active launcher-public">
+                <span class="label">Public</span>
+                <select id="launcher-public-input">
+                
+                    <option value="https://colab.research.google.com/github/QuantEcon/lecture-python.notebooks/blob/master/zreferences.ipynb">Colab</option>
+                
+                </select>
+                <i class="fas fa-check-circle"></i>
+            </li>
+            <li class="launcher-private">
+                <span class="label">Private</span>
+                <input type="text" id="launcher-private-input" data-repourl="https://github.com/QuantEcon/lecture-python.notebooks" data-urlpath="tree/lecture-python.notebooks/zreferences.ipynb" data-branch=master>
+                <i class="fas fa-check-circle"></i>
+            </li>
+            </ul>
+            <p class="launch"><a href="https://colab.research.google.com/github/QuantEcon/lecture-python.notebooks/blob/master/zreferences.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <script>
+                // QuantEcon Notebook Launcher
+                const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
+                // Highlight the server type if previous selection exists
+                if (typeof localStorage.launcherType !== 'undefined') {
+                  for (var i = 0; i < launcherTypeElements.length; i++) {
+                    launcherTypeElements[i].classList.remove('active');
+                    if ( launcherTypeElements[i].classList.contains(localStorage.launcherType) ) {
+                      launcherTypeElements[i].classList.add('active');
+                    }
+                  }
+                }
+                // Highlight server type on click and set local storage value
+                for (var i = 0; i < launcherTypeElements.length; i++) {
+                  launcherTypeElements[i].addEventListener('click', function() {
+                    for (var j = 0; j < launcherTypeElements.length; j++) {
+                      launcherTypeElements[j].classList.remove('active');
+                    }
+                    this.classList.add('active');
+                    if ( this.classList.contains('launcher-private') ) {
+                      localStorage.launcherType = 'launcher-private';
+                    } else if ( this.classList.contains('launcher-public') ) {
+                      localStorage.launcherType = 'launcher-public';
+                    }
+                    setLaunchServer();
+                  })
+                }
+                const launcherPublic = document.getElementById('launcher-public-input');
+                const launcherPrivate = document.getElementById('launcher-private-input');
+                const pageName = "zreferences";
+                const repoURL = "https://github.com/QuantEcon/lecture-python.notebooks";
+                const urlPath = "tree/lecture-python.notebooks/zreferences.ipynb";
+                const branch = "master"
+                const launchNotebookLink = document.getElementById('advancedLaunchButton');
+
+                // Highlight public server option if previous selection exists
+                if (typeof localStorage.launcherPublic !== 'undefined') {
+                  launcherPublic.value = localStorage.launcherPublic;
+                }
+                // Update local storage upon public server selection
+                launcherPublic.addEventListener('change', (event) => {
+                  setLaunchServer();
+                });
+                // Populate private server input if previous entry exists
+                if (typeof localStorage.launcherPrivate !== 'undefined') {
+                  launcherPrivate.value = localStorage.launcherPrivate;
+                }
+                // Update local storage when a private server is entered
+                launcherPrivate.addEventListener('input', (event) => {
+                  setLaunchServer();
+                });
+
+                // Function to update the "Launch Notebook" link href
+                function setLaunchServer() {
+                  launchNotebookLink.removeAttribute("style")
+                  if ( localStorage.launcherType == 'launcher-private' ) {
+                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
+                    launcherPrivateValue = launcherPrivate.value
+                    if (!launcherPrivateValue) {
+                        launchNotebookLink.removeAttribute("href")
+                        launchNotebookLink.style.background = "grey"
+                        return
+                    }
+                    localStorage.launcherPrivate = launcherPrivateValue;
+                    privateServer = localStorage.launcherPrivate.replace(/\/$/, "")
+                    if (!privateServer.includes("http")) {
+                        privateServer = "http://" + privateServer
+                    }
+                    launchNotebookLinkURL = privateServer + repoPrefix;
+                  } else if ( localStorage.launcherType == 'launcher-public' ) {
+                    launcherPublicValue = launcherPublic.options[launcherPublic.selectedIndex].value;
+                    localStorage.launcherPublic = launcherPublicValue;
+                    launchNotebookLinkURL = localStorage.launcherPublic;
+                  }
+                  if (launchNotebookLinkURL) launchNotebookLink.href = launchNotebookLinkURL;
+                }
+                // Check if user has previously selected a server
+                if ( (typeof localStorage.launcherPrivate !== 'undefined') || (typeof localStorage.launcherPublic !== 'undefined') ) {
+                  setLaunchServer();
+                }
+                </script>
+
+        </div>
+
+    </div> <!-- .wrapper-->
+  </body>
+</html>
