@@ -4,7 +4,6 @@ parts:
 - caption: Multiple Agent Models
   numbered: true
   chapters:
-  - file: schelling
   - file: uncertainty_traps
   - file: aiyagari
   - file: arellano
