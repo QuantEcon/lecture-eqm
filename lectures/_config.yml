@@ -24,8 +24,8 @@ execute:
 bibtex_bibfiles:
    - _static/quant-econ.bib
 
-# html:
-#   baseurl: https://eqm.quantecon.org/
+html:
+  baseurl: https://eqm.quantecon.org/
 
 latex:
    latex_documents:
@@ -83,10 +83,8 @@ sphinx:
       og_logo_url: https://assets.quantecon.org/img/qe-og-logo.png
       description: This website presents a set of lectures on equilibrium economic models.
       keywords: Python, QuantEcon, Quantitative Economics, Economics, Sloan, Alfred P. Sloan Foundation, Tom J. Sargent, John Stachurski
-
-      #analytics:
-        #google_analytics_id: G-J0SMYR4SG3
-        
+      analytics:
+        google_analytics_id: G-PEBDD57BFH
       launch_buttons:
         colab_url                 : https://colab.research.google.com
     intersphinx_mapping:
