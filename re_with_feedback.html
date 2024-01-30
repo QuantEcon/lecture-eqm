@@ -332,7 +332,7 @@ a mathematical expectation of a geometric sum of future values of another variab
 <li><p>a use of eigenvector decompositions of matrices that allowed Blanchard and Khan (1981) <span id="id3">[<a class="reference internal" href="zreferences.html#id238" title="Olivier Jean Blanchard and Charles M Kahn. The Solution of Linear Difference Models under Rational Expectations. Econometrica, 48(5):1305-1311, July 1980.">BK80</a>]</span> and Whiteman (1983) <span id="id4">[<a class="reference internal" href="zreferences.html#id239" title="Charles Whiteman. Linear Rational Expectations Models: A User's Guide. University of Minnesota Press, Minneapolis, Minnesota, 1983.">Whi83</a>]</span> to solve a class of linear rational expectations models</p></li>
 <li><p>how to use <strong>SymPy</strong> to get analytical formulas for some key objects comprising a rational expectations equilibrium</p></li>
 </ul>
-<p>Matrix decompositions employed here are described in more depth in this lecture <a class="reference external" href="https://quantecon.github.io/lecture-dle/lagrangian_lqdp.html" title="(in Python)"><span class="xref std std-doc">Lagrangian formulations</span></a>.</p>
+<p>Matrix decompositions employed here are described in more depth in this lecture <a class="reference external" href="https://dle.quantecon.org/lagrangian_lqdp.html" title="(in Python)"><span class="xref std std-doc">Lagrangian formulations</span></a>.</p>
 <p>We formulate a version of  Cagan’s model under  rational expectations
 as an <strong>expectational difference equation</strong> whose solution is a rational expectations equilibrium.</p>
 <p>We’ll start this lecture with a quick review of deterministic (i.e., non-random)
@@ -490,7 +490,7 @@ m_{t+1} = \alpha + \rho_1 m_t + \rho_2 m_{t-1}
 <p>where the zeros of the characteristic polynomial
 <span class="math notranslate nohighlight">\((1 - \rho_1 z - \rho_2 z^2)\)</span> are strictly greater than <span class="math notranslate nohighlight">\(1\)</span>
 in modulus.</p>
-<p>(Please see  <a class="reference external" href="https://quantecon.github.io/lecture-dynamics/samuelson.html" title="(in Python)"><span class="xref std std-doc">this</span></a> QuantEcon lecture for more about characteristic polynomials and their role in solving linear difference equations.)</p>
+<p>(Please see  <a class="reference external" href="https://dynamics.quantecon.org/samuelson.html" title="(in Python)"><span class="xref std std-doc">this</span></a> QuantEcon lecture for more about characteristic polynomials and their role in solving linear difference equations.)</p>
 <p>We seek a stable or non-explosive solution of the difference equation <a class="reference internal" href="#equation-equation-1">(11.8)</a> that
 obeys the system comprised of <a class="reference internal" href="#equation-equation-1">(11.8)</a>-<a class="reference internal" href="#equation-equation-3">(11.11)</a>.</p>
 <p>By stable or non-explosive, we mean that neither <span class="math notranslate nohighlight">\(m_t\)</span> nor <span class="math notranslate nohighlight">\(p_t\)</span>
