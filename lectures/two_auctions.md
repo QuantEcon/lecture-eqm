@@ -13,7 +13,7 @@ kernelspec:
 
 # First-Price and Second-Price Auctions
 
-This lecture is designed to set the stage for a subsequent lecture about [Multiple Good Allocation Mechanisms](https://python.quantecon.org/house_auction.html)
+This lecture is designed to set the stage for a subsequent lecture about {doc}`Multiple Good Allocation Mechanisms <eqm:house_auction>`
 
 In that lecture, a planner or auctioneer simultaneously allocates several goods to set of people.
 

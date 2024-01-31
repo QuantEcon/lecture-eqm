@@ -49,8 +49,8 @@ The present lecture uses  additional  ideas including
   problem and the Hicks-Arrow prices.
 - A **Big** $K$ **, little** $k$ trick widely used in
   macroeconomic dynamics.
-    * We shall encounter this trick in [this lecture](https://python.quantecon.org/rational_expectations.html)
-      and also in [this lecture](https://python-advanced.quantecon.org/dyn_stack.html).
+    * We shall encounter this trick in {doc}`this lecture <eqm:rational_expectations>`
+      and also in {doc}`this lecture <dps:dyn_stack>`.
 - A non-stochastic version of a theory of the **term structure of
   interest rates**.
 - An intimate connection between  two
@@ -424,8 +424,8 @@ price system.
 
 ```{note}
 This allocation will constitute the **Big** $K$  to be in the present instance of the **Big** $K$ **, little** $k$ trick
-that we'll apply to  a competitive equilibrium in the spirit of [this lecture](https://python.quantecon.org/rational_expectations.html)
-and  [this lecture](https://python-advanced.quantecon.org/dyn_stack.html).
+that we'll apply to  a competitive equilibrium in the spirit of {doc}`this lecture <eqm:rational_expectations>`
+and  {doc}`this lecture <dps:dyn_stack>`.
 ```
 
 In particular, we shall use the following procedure:
