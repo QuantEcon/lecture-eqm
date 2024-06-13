@@ -22,7 +22,7 @@ kernelspec:
 
 ## Overview
 
-In this lecture, we review the paper [Globalization and Synchronization of Innovation Cycles](http://www.centreformacroeconomics.ac.uk/Discussion-Papers/2015/CFMDP2015-27-Paper.pdf) by [Kiminori Matsuyama](http://faculty.wcas.northwestern.edu/~kmatsu/), [Laura Gardini](http://www.mdef.it/index.php?id=32) and [Iryna Sushko](http://irynasushko.altervista.org/).
+In this lecture, we review the paper [Globalization and Synchronization of Innovation Cycles](http://www.centreformacroeconomics.ac.uk/Discussion-Papers/2015/CFMDP2015-27-Paper.pdf) by [Kiminori Matsuyama](http://faculty.wcas.northwestern.edu/~kmatsu/), [Laura Gardini](https://en.wikipedia.org/wiki/Laura_Gardini) and [Iryna Sushko](http://irynasushko.altervista.org/).
 
 This model helps us understand several interesting stylized facts about the world economy.
 
