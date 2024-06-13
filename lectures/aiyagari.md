@@ -196,7 +196,7 @@ In reading the code, the following information will be helpful
 * `R` needs to be a matrix where `R[s, a]` is the reward at state `s` under action `a`.
 * `Q` needs to be a three-dimensional array where `Q[s, a, s']` is the probability of transitioning to state `s'` when the current state is `s` and the current action is `a`.
 
-(A more detailed discussion of `DiscreteDP` is available in the [Discrete State Dynamic Programming](https://python-advanced.quantecon.org/discrete_dp.html) lecture in the [Advanced
+(A more detailed discussion of `DiscreteDP` is available in the {doc}`Discrete State Dynamic Programming <tools:discrete_dp>` lecture in the [Advanced
 Quantitative Economics with Python](https://python-advanced.quantecon.org) lecture series.)
 
 Here we take the state to be $s_t := (a_t, z_t)$, where $a_t$ is assets and $z_t$ is the shock.

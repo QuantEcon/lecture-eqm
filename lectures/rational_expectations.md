@@ -591,8 +591,8 @@ If there were a unit measure of  identical competitive firms all behaving accord
 :class: dropdown
 ```
 
-To map a problem into a [discounted optimal linear control
-problem](https://python.quantecon.org/lqcontrol.html), we need to define
+To map a problem into a {doc}`discounted optimal linear control
+problem <dle:lqcontrol>`, we need to define
 
 - state vector $x_t$ and control vector $u_t$
 - matrices $A, B, Q, R$ that define preferences and the law of
