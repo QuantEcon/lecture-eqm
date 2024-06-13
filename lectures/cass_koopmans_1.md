@@ -20,10 +20,6 @@ kernelspec:
 
 # Cass-Koopmans Model
 
-```{contents} Contents
-:depth: 2
-```
-
 ## Overview
 
 This lecture and {doc}`Cass-Koopmans Competitive Equilibrium <cass_koopmans_2>` describe a model that Tjalling Koopmans {cite}`Koopmans`

@@ -20,10 +20,6 @@ kernelspec:
 
 # {index}`Rational Expectations Equilibrium <single: Rational Expectations Equilibrium>`
 
-```{contents} Contents
-:depth: 2
-```
-
 ```{epigraph}
 "If you're so smart, why aren't you rich?"
 ```

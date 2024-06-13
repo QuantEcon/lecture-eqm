@@ -23,10 +23,6 @@ kernelspec:
 ```{index} single: Stability in Linear Rational Expectations Models
 ```
 
-```{contents} Contents
-:depth: 2
-```
-
 In addition to what's in Anaconda, this lecture deploys the following libraries:
 
 ```{code-cell} ipython

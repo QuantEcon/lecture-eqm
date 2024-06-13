@@ -20,10 +20,6 @@ kernelspec:
 
 # Uncertainty Traps
 
-```{contents} Contents
-:depth: 2
-```
-
 ## Overview
 
 In this lecture, we study a simplified version of an uncertainty traps model of Fajgelbaum, Schaal and Taschereau-Dumouchel {cite}`fun`.
