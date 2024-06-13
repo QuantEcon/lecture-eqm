@@ -20,10 +20,6 @@ kernelspec:
 
 # Cass-Koopmans Competitive Equilibrium
 
-```{contents} Contents
-:depth: 2
-```
-
 ## Overview
 
 This lecture continues our analysis in this  lecture

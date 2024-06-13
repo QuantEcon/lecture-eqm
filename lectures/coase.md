@@ -20,10 +20,6 @@ kernelspec:
 
 # {index}`Coase's Theory of the Firm <single: Coase's Theory of the Firm>`
 
-```{contents} Contents
-:depth: 2
-```
-
 In addition to what's in Anaconda, this lecture will need the following libraries:
 
 ```{code-cell} ipython
@@ -60,7 +56,6 @@ We'll use the following imports:
 ```{code-cell} ipython
 import numpy as np
 import matplotlib.pyplot as plt
-%matplotlib inline
 from scipy.optimize import fminbound
 from interpolation import interp
 ```
